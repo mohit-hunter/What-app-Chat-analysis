@@ -24,7 +24,7 @@ def preprocessor(data):
     messages=[]
     for message in df['Message']:
         entry=re.split(r'([\w\W]+?):\s',message)
-        if entry[1:]:
+        if len(entry) >= 3:
             user.append(entry[1])
             messages.append(entry[2])
         else:
